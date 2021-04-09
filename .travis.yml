@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+
+script:
+  - docker build -t gabeheaven/node .
+  - docker images gabeheaven/node

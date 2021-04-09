@@ -5,3 +5,12 @@ services:
 script:
   - docker build -t gabeheaven/node .
   - docker images gabeheaven/node
+
+before_deploy:
+  - docker login -u gabeheaven -p wruDusWEwruzApegAp
+
+deploy:
+  provider: script
+  script: docker push gabeheaven/node
+  on:
+    branch: master
